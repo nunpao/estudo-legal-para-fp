@@ -1,0 +1,4 @@
+Maria   14
+João    18
+Zé       4
+Rute     7
