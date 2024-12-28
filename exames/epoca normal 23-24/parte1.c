@@ -35,10 +35,10 @@ int ordenado( int * a, int size){
 
     for(i = 0; i < size - 1; i++){
         if(a[i] > a[i + 1]){
-            return 1;
+            return 0;
         }   
     }
-    return 0;
+    return 1;
 }
 
 //ex4 - implemente uma função que receba uma matriz de inteiros e devolvea a soma de tofos os elementos localizados acima e na diagonal
@@ -99,7 +99,7 @@ int main(){
 
     */
 
-   /*
+   
    //EX4
     int matriz[DIM][DIM] = {
         {1, 1, 1, 1, 1},
@@ -111,7 +111,7 @@ int main(){
 
     printf("%d", somaMatrizSuperior(matriz));
     
-   */
+
 
     /*
     //EX5
