@@ -34,14 +34,17 @@ int existe(Equipa e, char * nome){
 
 int alocarMemEquipa(Equipa * e){
     if(e->contador == e->capacidade){
-        
-        Jogador * temp = (Jogador * ) realloc(e->jogadores, sizeof(Jogador) * (e->capacidade * 2));
 
+        //aloca a mem para a variavel temp
+        Jogador * temp = (Jogador * ) realloc(e->jogadores, sizeof(Jogador) * (e->capacidade * 2)); 
+
+        //verifica se a mem foi corretamente alocada
         if(temp == NULL){
             printf("Erro na realocação de memória!");
             return -1; //erro na alocação
         }
 
+        //passa a alocacao de temp para o array de jogadores
         e->jogadores = temp;
 
         e->capacidade *= 2;

@@ -162,7 +162,7 @@ void saveFleet(Fleet f, char * filename){
         printf("ERRO na gravação de f.trucks");
     }
 
-    fclose(fp);
+    fclose(fp);                                                                                                         
 }
 
 void loadFleet(Fleet * f, char * filename){
@@ -175,7 +175,7 @@ void loadFleet(Fleet * f, char * filename){
         nregs = fread(&f->truckCount, sizeof(int), 1, fp);
 
         if(nregs != 1){
-            printf("ERRO a ler f.truckCoutn");
+            printf("ERRO a ler f.truckCount");
         }
 
         nregs = fread(&f->fleetCapacity, sizeof(int), 1, fp);
@@ -204,7 +204,7 @@ void loadFleet(Fleet * f, char * filename){
 
         if((fp = fopen(filename, "wb")) == NULL){
         printf("Ficheiro não encontrado");
-    }
+        }
 
     nregs = fwrite(&f->truckCount, sizeof(int), 1, fp);
 

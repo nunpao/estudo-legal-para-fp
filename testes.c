@@ -79,10 +79,72 @@ void entremeado(char *s, int num) {
     }
 }
 
+char charToUpper(char ch){
+    if(ch >= 'a' && ch <= 'z'){
+        return ch + ('A' - 'a');
+    } else {
+        return ch;
+    }
+}
+
+void strupr(char * s){
+    int i; 
+    for(i = 0; s[i] != '\0'; i++){
+        s[i] = charToUpper(s[i]);
+    }
+}
+
+int stricmp(char * s1, char * s2){
+    int i;
+
+    for(i = 0; s1[i] != '\0' || s2[i] != '\0'; i++){
+        if(charToUpper(s1[i]) != charToUpper(s2[i])){
+            return 0;
+        }
+    }
+
+    if(s1[i] == '\0' && s2[i] == '\0'){
+        return 1;
+    }
+}
+
+void repeticoes2(char *s){
+    int i, j;
+
+
+    for(i = j = 0; s[i] != '\0'; i++){
+        if(strcountc(s, s[i]) > 1){
+            s[j++] = s[i];
+        }
+    }
+
+    s[j] = '\0';
+}
+
+void prox_char(char * s){
+    int i; 
+
+    for(i = 0; s[i] != '\0'; i++){
+        s[i] = s[i] + 1;
+    }
+}
+
+void strDuplica(char * s){
+    int i, len = strlen(s);
+
+    for(i = 0; i < len; i++){
+        s[i+ len] = s[i];
+    }
+
+    s[i + len] = '\0';
+}
+
 int main(){
-    char oi[100] = "Era uma vez";
+    char oi[100] = "A8M0";
+    char oi2[100] = "ERa uuMa vez";
 
-    xspace(oi);
+    strDuplica(oi);
 
-    printf("%s", oi);
+   printf("%s", oi);
+
 }

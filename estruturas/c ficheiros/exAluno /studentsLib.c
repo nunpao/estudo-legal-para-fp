@@ -236,7 +236,7 @@ int carregarAlunosFicheiro(Class *c, char *fileName) {
         fp = fopen(fileName, "wb");
         if (fp == NULL) {
             printf("Erro ao criar o arquivo\n");
-            free(c->students);
+            free(c->students);                                   
             return 0;
         }
 
